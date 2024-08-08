@@ -12,6 +12,8 @@ import CourseRoutes from "./Kanbas/Courses/routes.js";
 import ModuleRoutes from './Kanbas/Modules/routes.js';
 import AssignmentRoutes from './Kanbas/Assignments/routes.js';
 import UserRoutes from "./Users/routes.js";
+import QuizRoutes from "./Kanbas/Quizzes/routes.js";
+import QuestionRoutes from "./Kanbas/Quizzes/Questions/routes.js";
 
 // connect to mongodb 
 const CONNECTION_STRING = process.env.MONGO_CONNECTION_STRING //|| "mongodb://127.0.0.1:27017/kanbas"
@@ -21,7 +23,7 @@ console.log(CONNECTION_STRING);
 const app = express();
 app.use(cors({
     credentials: true,
-    origin: process.env.NETLIFY_URL || "http://localhost:3000",
+    origin: process.env.NETLIFY_URL || "http://localhost:4000",
 })); 
 const sessionOptions = {
     secret: process.env.SESSION_SECRET || "kanbas",
@@ -38,6 +40,8 @@ const sessionOptions = {
   }
 app.use(session(sessionOptions));
 app.use(express.json()); 
+QuestionRoutes(app); 
+QuizRoutes(app); 
 UserRoutes(app); 
 AssignmentRoutes(app);
 CourseRoutes(app); 

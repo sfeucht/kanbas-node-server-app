@@ -1,0 +1,19 @@
+
+[{
+    "_id": {
+      "$oid": "66b03aa4badf05d9919b669b"
+    },
+    "quizId": {
+      "$oid" : "66ae9838badf05d9919b6692"
+    },
+    "courseId": {
+      "$oid" : "66ae6b57badf05d9919b6679"
+    },
+    "questionType": "Multiple Choice",
+    "points": 30,
+    "userAttempts": {},
+    "questionText": "What is the answer?",
+    "options": ["Answer 1", "answer 2", "answer 3", "answer 4"],
+    "correctAnswer": "answer 4",
+    "userAnswers": {}
+}]
