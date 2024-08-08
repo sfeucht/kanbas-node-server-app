@@ -2,11 +2,9 @@ import * as dao from "./dao.js";
 
 export default function QuestionRoutes(app) {
   const updateQuestion = async (req, res) => {
-    console.log('updateQuestion'); 
     const { id } = req.params;
     const question = req.body;
     const status = await dao.updateQuestion(id, question); 
-    console.log('got past updateQuestion'); 
     res.json(status); 
   }
 
