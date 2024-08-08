@@ -2,6 +2,10 @@ import mongoose from "mongoose";
 const quizSchema = new mongoose.Schema({
     title: String,
     information: String,
+    published: {
+        type: Boolean,
+        default: false 
+    },
     quizType: {
         type: String,
         enum: ["Graded Quiz", "Practice Quiz", "Graded Survey", "Ungraded Survey"],
